@@ -3,9 +3,8 @@
 Vlad Voytenko
 ID: 45654645645
 2020 - 09 - 15
-This program ...
+This program have right sqvigy line ...
 */
-
 
 package com.example.diceroller
 
