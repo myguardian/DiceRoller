@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice() {
+
         val randomInt = (1..6).random()
 
         Toast.makeText(this, "button clicked", Toast.LENGTH_SHORT).show()
