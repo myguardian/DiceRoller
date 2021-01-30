@@ -11,12 +11,18 @@ package com.example.diceroller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.android.diceroller.R
 
 class MainActivity : AppCompatActivity() {
+
+    companion object{
+        const val TAG = "DiceRoller"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,14 +32,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice() {
+        Log.d(TAG, "rollDice() called")
+        Toast.makeText(this, getString(R.string.die_rolled), Toast.LENGTH_SHORT).show()
 
         val randomInt = (1..6).random()
-
-        Toast.makeText(this, "button clicked", Toast.LENGTH_SHORT).show()
+        Log.d(TAG, "randomInt = $randomInt")
         val resultText: TextView = findViewById(R.id.result_text)
-        resultText.text = "Dice Rolled!"
         resultText.text = randomInt.toString()
-
     }
 
 
