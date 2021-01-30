@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         Toast.makeText(this, "button clicked", Toast.LENGTH_SHORT).show()
         val resultText: TextView = findViewById(R.id.result_text)
-        resultText.text = "Dice Rolled!"
+        resultText.text = "Dice Rolled up!"
         resultText.text = randomInt.toString()
 
     }
