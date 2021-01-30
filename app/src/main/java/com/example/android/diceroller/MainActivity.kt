@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
         // listener to it.
         val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.setOnClickListener { rollDice() }
-
     }
 
     /**
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun rollDice() {
 
-        Toast.makeText(this, "dice rolled...", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.die_rolled), Toast.LENGTH_SHORT).show()
 
         val randomInt = (1..6).random()
 
