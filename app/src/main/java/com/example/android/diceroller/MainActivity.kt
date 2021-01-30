@@ -21,6 +21,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.example.android.diceroller.databinding.ActivityMainBinding
 
 /**
  * DiceRoller demonstrates simple interactivity in an Android app.
@@ -29,14 +30,17 @@ import android.widget.Toast
  */
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         // Get the Button view from the layout and assign a click
         // listener to it.
-        val rollButton: Button = findViewById(R.id.roll_button)
-        rollButton.setOnClickListener { rollDice() }
+        binding.rollButton.setOnClickListener { rollDice() }
     }
 
     /**
@@ -48,7 +52,6 @@ class MainActivity : AppCompatActivity() {
 
         val randomInt = (1..6).random()
 
-         val resultText: TextView = findViewById(R.id.result_text)
-        resultText.text = randomInt.toString()
+        binding.resultText.text = randomInt.toString()
     }
 }
